@@ -31,10 +31,18 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                    
+                    
                     <ul class="navbar-nav mr-auto">
-
+                        @if(Auth::check())
+                            <li class="nav-item dropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('graduados.index') }}">Graduados</a>
+                                </li>
+                            </li>
+                        @endif
                     </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
