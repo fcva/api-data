@@ -19,8 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/graduados/index', 'Graduados\GraduadosController@index')->name('graduados.index');
+
+Route::get('/graduados/mostrar', 'Graduados\GraduadosController@index')->name('graduados.mostrar');
 
 Route::get('/graduados/importar', 'Graduados\GraduadosController@importar')->name('graduados.importar');
 
 Route::post('/graduados/importar/store', 'Graduados\GraduadosController@importarStore')->name('graduados.importar.store');
+
+
+Route::resource('/graduados', 'Graduados\ApiGraduadosController');
