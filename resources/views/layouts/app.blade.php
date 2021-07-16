@@ -10,7 +10,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('js/chart.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -35,10 +37,12 @@
 
                     <ul class="navbar-nav mr-auto">
                         @if(Auth::check())
-                            <li class="nav-item dropdown">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('graduados.mostrar') }}">Graduados</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('graduados.mostrar') }}">Graduados</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('graduados.estadisticas.index') }}">Estadísitcas</a>
                             </li>
                         @endif
                     </ul>
